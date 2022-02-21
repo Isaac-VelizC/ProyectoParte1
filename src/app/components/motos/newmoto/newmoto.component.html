@@ -1,0 +1,41 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center">{{ titulo }}
+                        <!--div *ngIf="loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div-->
+                    </h3>
+                    <form class="row g-3 needs-validation">
+                        <div class="col-md-6 position-relative">
+                            <label for="validationTooltip01" class="form-label">Patente</label>
+                            <input type="text" class="form-control" id="validationTooltip01" name="patente" [(ngModel)]="item.patente" required>
+                        </div>
+                        <div class="col-md-6 position-relative">
+                            <label for="validationTooltip02" class="form-label">Modelo</label>
+                            <input type="text" class="form-control" id="validationTooltip02" name="modelo" [(ngModel)]="item.modelo" required>
+                        </div>
+                        <div class="col-md-12 position-relative">
+                            <label for="validationTooltip03" class="form-label">Marca</label>
+                            <input type="text" class="form-control" id="validationTooltip03" name="marca" [(ngModel)]="item.marca" required>
+                        </div>
+                        <div class="col-md-12 position-relative">
+                            <label for="validationTooltip05" class="form-label">Matricula</label>
+                            <input type="text" class="form-control" id="validationTooltip05" name="matricula" [(ngModel)]="item.matricula" required>
+                        </div>
+                        <div class="col-md-12 position-relative">
+                            <label for="validationTooltip03" class="form-label">Imagen</label>
+                            <input type="text" class="form-control" id="validationTooltip03" name="foto" [(ngModel)]="item.foto" required>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="button" (click)="salir()" class="btn btn-warning">Cancelar</button>
+                            <button type="button" (click)="Enviar()" class="btn btn-success">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

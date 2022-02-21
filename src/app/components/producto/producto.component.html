@@ -1,32 +1,36 @@
-<a  [routerLink]="['/productoform']"
-class="btn btn-success">Nuevo</a>
-<form class="d-flex">
-    <input name="search" [(ngModel)]="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-    <button (click)="buscar()" class="btn btn-outline-success" type="submit">Buscar</button>
-  </form>
-<table>
-    <tr>
-        <th>Nombre</th>
-        <th>Descripcion</th>
-        <th>Precio</th>
-        <th>Foto</th>
-    </tr>
-    <tr *ngFor="let item of lista">
-        <td>{{item.nombre}}</td>
-        <td>{{item.descripcion}}</td>
-        <td>{{item.precio}}</td>
-        <td>{{item.foto}}</td>
-        <td>
-            <a [routerLink]="['/productoform/',item.key]">
-            <i class="swal2-icon-content"></i>
-            editar
-            </a>
-        </td>
-        <td>
-            <a href="#"  (click)="borrar($event,item)" >
-            <i class="bi bi-square"></i>
-            delete
-            </a>
-        </td>
-    </tr>
-</table> 
+<div class="container pt-4">
+    <div class="card">
+        <form class="d-flex">
+            <input name="search" [(ngModel)]="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button (click)="buscar()" class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        <div class="card-body">
+            <span class="h3 card text-center">Listado de Prouctos</span>
+            <button class="btn btn-dark btn-lg float-right" [routerLink]="['/productoform']"><i class="fa fa-plus"></i></button>
+            <h5 style="margin-top: 30px;" *ngIf="lista.length == 0">No hay datos para mostrar</h5>
+            <table *ngIf="lista.length > 0" class="table table-dark table-hover mt-5">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Foto</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of lista">
+                        <td>{{item.nombre}}</td>
+                        <td>{{item.descripcion}}</td>
+                        <td>{{item.precio}}</td>
+                        <td>{{item.foto}}</td>
+                        <td>
+                            <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/productoform/',item.key]"></i>
+                            <i (click)="borrar($event,item)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                        </td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

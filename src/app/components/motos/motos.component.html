@@ -1,0 +1,34 @@
+<div class="container pt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3 card text-center">Listado de las motos</span>
+            <button class="btn btn-dark btn-lg float-right" routerLink="/FormMoto"><i class="fa fa-plus"></i></button>
+            <h5 style="margin-top: 30px;" *ngIf="lista.length == 0">No hay datos para mostrar</h5>
+            <table *ngIf="lista.length > 0" class="table table-dark table-hover mt-5">
+                <thead>
+                  <tr>
+                    <th>Patente</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Matricula</th>
+                    <th>Imagen</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let moto of lista">
+                    <td>{{ moto.patente }}</td>
+                    <td>{{ moto.modelo }}</td>
+                    <td>{{ moto.marca }}</td>
+                    <td>{{ moto.matricula}}</td>
+                    <td>{{moto.foto}}</td>
+                    <td>
+                      <i class="fas fa-edit fa-lg text-info mr-2" [routerLink]="['/FormMoto/', moto.key]"></i>
+                      <i (click)="eliminar($event,moto)" class="fas fa-trash-alt fa-lg text-danger"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

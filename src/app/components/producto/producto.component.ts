@@ -12,9 +12,10 @@ export class ProductoComponent implements OnInit {
   constructor(private Producto:ProductoService ) { }
   search:String='';
   ngOnInit(): void {
-    console.log("iniciado consulta");
+    console.log("iniciado consulta aqui");
     this.Producto.getAll().snapshotChanges().subscribe(
       serve=>{
+        console.log(serve);
         this.lista=
         serve.map(item=>{
            return Object.assign(

@@ -14,8 +14,7 @@ const routes: Routes = [
         path:'',
         loadChildren:
                 ()=>
-                AdminLayoutmodule 
-                //import('./layout/admin-layout/admin-layout.module').then(m=>m.AdminLayoutmodule)
+                AdminLayoutmodule
       }
     ]
   }
@@ -32,10 +31,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
-/*******************************
- * realizar un crud con angular y firebase
- * en un nuevo proyecto
- * 
- */

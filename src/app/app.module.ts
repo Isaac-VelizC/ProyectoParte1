@@ -13,11 +13,17 @@ import { environment } from 'src/environments/environment';
 import { ProductonuevoComponent } from './components/producto/productonuevo/productonuevo.component';
 import { FormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { MotosComponent } from './components/motos/motos.component';
+import { NewmotoComponent } from './components/motos/newmoto/newmoto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductonuevoComponent,
+    ClienteComponent,
+    MotosComponent,
+    NewmotoComponent,
   ],
   imports: [
     BrowserModule,

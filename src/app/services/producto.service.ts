@@ -1,7 +1,4 @@
-import { identifierName } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } 
-from '@angular/fire/database';
 import { AngularFirestore } from "@angular/fire/firestore";
 import { Producto as Coleccion } from '../model/producto';
 @Injectable({
@@ -9,13 +6,7 @@ import { Producto as Coleccion } from '../model/producto';
 })
 export class ProductoService {
   private dbpath='Producto';
-  //ProductoRef:AngularFireList<Producto>;
-  constructor(///private db: AngularFireDatabase,
-        private dbb:AngularFirestore
-    )
-  { 
-    //this.ProductoRef=db.list(this.dbpath);
-  }
+  constructor( private dbb:AngularFirestore) { }
   getAll()
   {
     return this.dbb.collection<Coleccion>(this.dbpath);
@@ -25,9 +16,7 @@ export class ProductoService {
   }
   add(prod:Coleccion)
   {
-    console.log(prod);
-    return this.dbb.collection<Coleccion>(this.dbpath)
-    .doc()
+    return this.dbb.collection<Coleccion>(this.dbpath).doc()
     .set(Object.assign({},prod));
   }
   edit(id:string,prod:Coleccion){

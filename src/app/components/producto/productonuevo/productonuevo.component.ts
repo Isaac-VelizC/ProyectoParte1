@@ -62,5 +62,7 @@ export class ProductonuevoComponent implements OnInit {
     });
     
   } 
-  salir(){}
+  salir(){
+    this.router.navigate(['/'+this.seccion]);
+  }
 }
